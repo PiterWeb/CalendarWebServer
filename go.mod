@@ -1,5 +1,6 @@
 module piterdev.com/app
 
+// +heroku goVersion go.1.18
 go 1.18
 
 require github.com/gofiber/fiber/v2 v2.31.0 // direct
