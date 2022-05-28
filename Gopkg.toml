@@ -1,0 +1,3 @@
+[metadata.heroku]
+
+go-version = "1.18"
