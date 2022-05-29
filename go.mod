@@ -3,7 +3,7 @@ module piterdev.com/app
 // +heroku goVersion go1.17
 go 1.17
 
-require github.com/gofiber/fiber/v2 v2.31.0 // direct
+require github.com/gofiber/fiber/v2 v2.34.0 // direct
 
 require (
 	github.com/andybalholm/brotli v1.0.4 // indirect
@@ -14,7 +14,7 @@ require (
 	github.com/pkg/errors v0.9.1 // indirect
 	github.com/teris-io/shortid v0.0.0-20201117134242-e59966efd125 // indirect
 	github.com/valyala/bytebufferpool v1.0.0 // indirect
-	github.com/valyala/fasthttp v1.35.0 // indirect
+	github.com/valyala/fasthttp v1.37.0 // indirect
 	github.com/valyala/tcplisten v1.0.0 // indirect
 	github.com/xdg-go/pbkdf2 v1.0.0 // indirect
 	github.com/xdg-go/scram v1.0.2 // indirect
