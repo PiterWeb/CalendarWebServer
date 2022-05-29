@@ -38,6 +38,8 @@ func Session (c *fiber.Ctx) error {
 
 		cookie := utils.CreateCookie("session", c.Cookies("session"), 8760)
 
+		cookie.Domain = "crosscalendar.vercel.app"
+
 		c.Cookie(cookie)
 
 		return c.Next()
