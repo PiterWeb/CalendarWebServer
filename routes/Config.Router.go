@@ -23,7 +23,7 @@ func configRoutes(app *fiber.App) string {
 
 	app.Use(cors.New(cors.Config{
 		AllowCredentials: true,
-		AllowOrigins: "https://crosscalendar.vercel.app",	
+		AllowOrigins: "*",	
 	}))
 
 	cookieKey := os.Getenv("SECRET_COOKIE")
