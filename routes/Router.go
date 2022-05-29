@@ -3,7 +3,7 @@ package routes
 import (
 	"github.com/gofiber/fiber/v2"
 	"piterdev.com/app/routes/api"
-	// "github.com/gofiber/fiber/v2/middleware/monitor"
+	"github.com/gofiber/fiber/v2/middleware/monitor"
 	"piterdev.com/app/middlewares"
 	"fmt"
 )
@@ -19,7 +19,7 @@ func Routes() {
 	indexRoutes := app.Group("/")
 
 	indexRoutes.Get("/", Index)
-
+	indexRoutes.Get("/metrics", monitor.New(monitor.Config{Title: "MyService Metrics Page"}))
 	// User API protected Routes
 
 	userRoutesProtected := app.Group("/api/user")

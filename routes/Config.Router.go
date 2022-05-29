@@ -7,7 +7,6 @@ import (
 	"os"
 	"github.com/gofiber/fiber/v2/middleware/etag"
 	"github.com/gofiber/fiber/v2/middleware/cors"
-	// "github.com/gofiber/fiber/v2/middleware/csrf"
 	"github.com/joho/godotenv"
 )
 
@@ -26,8 +25,6 @@ func configRoutes(app *fiber.App) string {
 		AllowCredentials: true,
 		AllowOrigins: "https://crosscalendar.vercel.app",	
 	}))
-
-	// app.Use(csrf.New())
 
 	cookieKey := os.Getenv("SECRET_COOKIE")
 
