@@ -24,7 +24,7 @@ func configRoutes(app *fiber.App) string {
 	app.Use(cors.New(cors.Config{
 		AllowCredentials: true,
 		AllowOrigins: "*",
-		AllowHeaders: "Content-Type",
+		AllowHeaders: "Content-Type,Access-Control-Allow-Origin",
 	}))
 
 	cookieKey := os.Getenv("SECRET_COOKIE")
