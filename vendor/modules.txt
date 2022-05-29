@@ -4,30 +4,31 @@ github.com/andybalholm/brotli
 # github.com/go-stack/stack v1.8.0
 ## explicit
 github.com/go-stack/stack
-# github.com/gofiber/fiber/v2 v2.31.0
+# github.com/gofiber/fiber/v2 v2.34.0
 ## explicit; go 1.16
 github.com/gofiber/fiber/v2
 github.com/gofiber/fiber/v2/internal/bytebufferpool
 github.com/gofiber/fiber/v2/internal/colorable
 github.com/gofiber/fiber/v2/internal/dictpool
 github.com/gofiber/fiber/v2/internal/fwd
-github.com/gofiber/fiber/v2/internal/go-json
-github.com/gofiber/fiber/v2/internal/go-json/decoder
-github.com/gofiber/fiber/v2/internal/go-json/encoder
-github.com/gofiber/fiber/v2/internal/go-json/encoder/vm
-github.com/gofiber/fiber/v2/internal/go-json/encoder/vm_color
-github.com/gofiber/fiber/v2/internal/go-json/encoder/vm_color_indent
-github.com/gofiber/fiber/v2/internal/go-json/encoder/vm_indent
-github.com/gofiber/fiber/v2/internal/go-json/errors
-github.com/gofiber/fiber/v2/internal/go-json/runtime
+github.com/gofiber/fiber/v2/internal/go-ole
+github.com/gofiber/fiber/v2/internal/go-ole/oleutil
+github.com/gofiber/fiber/v2/internal/gopsutil/common
+github.com/gofiber/fiber/v2/internal/gopsutil/cpu
+github.com/gofiber/fiber/v2/internal/gopsutil/load
+github.com/gofiber/fiber/v2/internal/gopsutil/mem
+github.com/gofiber/fiber/v2/internal/gopsutil/net
+github.com/gofiber/fiber/v2/internal/gopsutil/process
 github.com/gofiber/fiber/v2/internal/isatty
 github.com/gofiber/fiber/v2/internal/msgp
 github.com/gofiber/fiber/v2/internal/schema
 github.com/gofiber/fiber/v2/internal/uuid
+github.com/gofiber/fiber/v2/internal/wmi
 github.com/gofiber/fiber/v2/middleware/compress
 github.com/gofiber/fiber/v2/middleware/cors
 github.com/gofiber/fiber/v2/middleware/encryptcookie
 github.com/gofiber/fiber/v2/middleware/etag
+github.com/gofiber/fiber/v2/middleware/monitor
 github.com/gofiber/fiber/v2/utils
 # github.com/golang/snappy v0.0.1
 ## explicit
@@ -55,7 +56,7 @@ github.com/teris-io/shortid
 # github.com/valyala/bytebufferpool v1.0.0
 ## explicit
 github.com/valyala/bytebufferpool
-# github.com/valyala/fasthttp v1.35.0
+# github.com/valyala/fasthttp v1.37.0
 ## explicit; go 1.15
 github.com/valyala/fasthttp
 github.com/valyala/fasthttp/fasthttputil
