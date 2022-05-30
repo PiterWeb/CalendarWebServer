@@ -16,6 +16,11 @@ func configRoutes(app *fiber.App) string {
 
 	app.Use(etag.New())
 
+	app.Use(func(c * fiber.Ctx) error {
+		c.Set("Access-Control-Allow-Origin", "*")
+		return c.Next()
+	})
+
 	app.Use(compress.New(
 		compress.Config{
 			Level: compress.LevelBestSpeed,
