@@ -15,6 +15,10 @@ func CreateCookie(name string, value string, durationHours int) *fiber.Cookie {
 
 	cookie.Expires = time.Now().Add(time.Duration(durationHours) * time.Hour)
 
+	cookie.HTTPOnly = true
+
+	cookie.SameSite = "None"
+
 	return cookie
 
 }
