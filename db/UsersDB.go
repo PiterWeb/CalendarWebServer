@@ -2,10 +2,12 @@ package db
 
 import (
 	"errors"
+
+	"github.com/PiterWeb/CalendarWebServer/crypt"
+	"github.com/PiterWeb/CalendarWebServer/models"
+
 	"github.com/teris-io/shortid"
 	"go.mongodb.org/mongo-driver/bson"
-	"piterdev.com/app/crypt"
-	"piterdev.com/app/models"
 )
 
 func RegisterUser(user User) error {

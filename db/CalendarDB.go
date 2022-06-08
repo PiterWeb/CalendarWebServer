@@ -2,8 +2,10 @@ package db
 
 import (
 	"errors"
+
+	"github.com/PiterWeb/CalendarWebServer/models"
+
 	"go.mongodb.org/mongo-driver/bson"
-	"piterdev.com/app/models"
 )
 
 func CreateUserCalendarEvent(user User, event models.Event) error {
@@ -185,7 +187,7 @@ func UpdateUserCalendarEventById(user User, id string, event models.Event) error
 		return err
 	}
 
-	_,err = eventColl.UpdateOne(ctx, bson.M{"id": id}, bson.M{"$set": event})
+	_, err = eventColl.UpdateOne(ctx, bson.M{"id": id}, bson.M{"$set": event})
 
 	if err != nil {
 		return err
@@ -194,5 +196,3 @@ func UpdateUserCalendarEventById(user User, id string, event models.Event) error
 	return nil
 
 }
-
-

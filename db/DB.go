@@ -2,12 +2,14 @@ package db
 
 import (
 	"context"
+	"log"
+	"os"
+
+	"github.com/PiterWeb/CalendarWebServer/models"
+
 	"github.com/joho/godotenv"
 	"go.mongodb.org/mongo-driver/mongo"
 	"go.mongodb.org/mongo-driver/mongo/options"
-	"log"
-	"os"
-	"piterdev.com/app/models"
 )
 
 var ctx = context.TODO()

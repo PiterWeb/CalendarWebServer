@@ -1,13 +1,14 @@
 package middlewares
 
 import (
-	"piterdev.com/app/models"
+	"github.com/PiterWeb/CalendarWebServer/models"
+	"github.com/PiterWeb/CalendarWebServer/routes/api"
+	"github.com/PiterWeb/CalendarWebServer/utils"
+
 	"github.com/gofiber/fiber/v2"
-	"piterdev.com/app/utils"
-	"piterdev.com/app/routes/api"
 )
 
-func Session (c *fiber.Ctx) error {
+func Session(c *fiber.Ctx) error {
 
 	var user *models.User
 

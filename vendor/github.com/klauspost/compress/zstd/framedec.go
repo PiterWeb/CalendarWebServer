@@ -197,7 +197,7 @@ func (d *frameDec) reset(br byteBuffer) error {
 	default:
 		fcsSize = 1 << v
 	}
-	d.FrameContentSize = fcsUnknown
+	d.FrameContentSize = 0
 	if fcsSize > 0 {
 		b, err := br.readSmall(fcsSize)
 		if err != nil {
@@ -343,7 +343,12 @@ func (d *frameDec) runDecoder(dst []byte, dec *blockDec) ([]byte, error) {
 			err = ErrDecoderSizeExceeded
 			break
 		}
-		if uint64(len(d.history.b)-crcStart) > d.FrameContentSize {
+		if d.SingleSegment && uint64(len(d.history.b)) > d.o.maxDecodedSize {
+			println("runDecoder: single segment and", uint64(len(d.history.b)), ">", d.o.maxDecodedSize)
+			err = ErrFrameSizeExceeded
+			break
+		}
+		if d.FrameContentSize > 0 && uint64(len(d.history.b)-crcStart) > d.FrameContentSize {
 			println("runDecoder: FrameContentSize exceeded", uint64(len(d.history.b)-crcStart), ">", d.FrameContentSize)
 			err = ErrFrameSizeExceeded
 			break
@@ -351,13 +356,13 @@ func (d *frameDec) runDecoder(dst []byte, dec *blockDec) ([]byte, error) {
 		if dec.Last {
 			break
 		}
-		if debugDecoder {
+		if debugDecoder && d.FrameContentSize > 0 {
 			println("runDecoder: FrameContentSize", uint64(len(d.history.b)-crcStart), "<=", d.FrameContentSize)
 		}
 	}
 	dst = d.history.b
 	if err == nil {
-		if d.FrameContentSize != fcsUnknown && uint64(len(d.history.b)-crcStart) != d.FrameContentSize {
+		if d.FrameContentSize > 0 && uint64(len(d.history.b)-crcStart) != d.FrameContentSize {
 			err = ErrFrameSizeMismatch
 		} else if d.HasCheckSum {
 			var n int

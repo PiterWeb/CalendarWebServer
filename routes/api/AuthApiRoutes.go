@@ -1,10 +1,12 @@
 package api
 
 import (
-	"github.com/gofiber/fiber/v2"
-	"piterdev.com/app/models"
-	"piterdev.com/app/utils"
 	"time"
+
+	"github.com/PiterWeb/CalendarWebServer/models"
+	"github.com/PiterWeb/CalendarWebServer/utils"
+
+	"github.com/gofiber/fiber/v2"
 )
 
 func LoginRoute(c *fiber.Ctx) error {
@@ -98,7 +100,7 @@ func RegisterRoute(c *fiber.Ctx) error {
 func LogoutRoute(c *fiber.Ctx) error {
 
 	if c.Cookies("session") != "" {
-		
+
 		c.ClearCookie("session")
 
 		return c.JSON(fiber.Map{
@@ -117,7 +119,7 @@ func LogoutRoute(c *fiber.Ctx) error {
 
 func DeleteRoute(c *fiber.Ctx) error {
 
-	user , err := utils.GetUserFromSession(c)
+	user, err := utils.GetUserFromSession(c)
 
 	if err != nil {
 		return c.JSON(fiber.Map{

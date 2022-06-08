@@ -1,8 +1,8 @@
 package api
 
 import (
-	"piterdev.com/app/db"
-	"piterdev.com/app/models"
+	"github.com/PiterWeb/CalendarWebServer/db"
+	"github.com/PiterWeb/CalendarWebServer/models"
 )
 
 func LoginUser(user *models.User) error {
@@ -30,7 +30,7 @@ func registerUser(user *models.User) error {
 }
 
 func deleteUser(user *models.User) error {
-	
+
 	err := db.DeleteUser(user)
 
 	if err != nil {

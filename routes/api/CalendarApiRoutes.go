@@ -1,11 +1,12 @@
 package api
 
 import (
+	"github.com/PiterWeb/CalendarWebServer/db"
+	"github.com/PiterWeb/CalendarWebServer/models"
+	"github.com/PiterWeb/CalendarWebServer/utils"
+
 	"github.com/gofiber/fiber/v2"
 	"github.com/teris-io/shortid"
-	"piterdev.com/app/db"
-	"piterdev.com/app/models"
-	"piterdev.com/app/utils"
 )
 
 func CreateEventRoute(c *fiber.Ctx) error {
@@ -69,14 +70,14 @@ func GetUserEventsRoute(c *fiber.Ctx) error {
 	}
 
 	return c.JSON(fiber.Map{
-		"status": "ok",
+		"status":  "ok",
 		"message": events,
 	})
 
 }
 
 func GetUserImportantEventsRoute(c *fiber.Ctx) error {
-	
+
 	user, err := utils.GetUserFromSession(c)
 
 	if err != nil {
@@ -96,7 +97,7 @@ func GetUserImportantEventsRoute(c *fiber.Ctx) error {
 	}
 
 	return c.JSON(fiber.Map{
-		"status": "ok",
+		"status":  "ok",
 		"message": events,
 	})
 }
